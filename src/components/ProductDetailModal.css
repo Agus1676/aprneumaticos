@@ -1,0 +1,378 @@
+.detail-modal {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-hover);
+  width: 100%;
+  max-width: 850px;
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.detail-close-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  z-index: 10;
+}
+
+.detail-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.detail-modal-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 40px;
+}
+
+.detail-visuals {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.detail-tag-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 6px;
+  z-index: 2;
+  box-shadow: 0 4px 10px var(--color-primary-glow);
+}
+
+.detail-img-box {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.detail-img-box img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+.detail-modal:hover .detail-img-box img {
+  transform: scale(1.03);
+}
+
+.detail-warranty-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.warranty-icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.detail-warranty-card h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.detail-warranty-card p {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+/* Info side */
+.detail-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-brand {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.detail-model-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.detail-dimensions {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.detail-specs-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.spec-row:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  padding-bottom: 8px;
+}
+
+.spec-name {
+  color: var(--text-secondary);
+}
+
+.spec-val {
+  font-weight: 600;
+  color: #fff;
+}
+
+.stock-val.ok {
+  color: var(--whatsapp-color);
+}
+
+.stock-val.low {
+  color: #ff9500;
+}
+
+.detail-description-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.detail-features-list {
+  margin-bottom: 24px;
+}
+
+.detail-features-list h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.detail-features-list ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-features-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.feature-check {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* Calculator styling */
+.finance-calculator {
+  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.calc-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.calc-title h3 {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.plan-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.plan-btn {
+  flex: 1;
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.plan-btn:hover {
+  border-color: var(--text-secondary);
+  color: #fff;
+}
+
+.plan-btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 2px 8px var(--color-primary-glow);
+}
+
+.calc-results {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-primary);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.result-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-item.text-right {
+  align-items: flex-end;
+}
+
+.res-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.res-val {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.total-val {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.1rem;
+}
+
+.interest-badge {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: rgba(37, 211, 102, 0.1);
+  color: var(--whatsapp-color);
+}
+
+.plan-btn.active:nth-child(3) ~ .calc-results .interest-badge,
+.plan-btn.active:last-child ~ .calc-results .interest-badge {
+  background-color: var(--color-primary-glow);
+  color: var(--color-primary);
+}
+
+/* Actions */
+.btn-whatsapp-detail {
+  background-color: var(--whatsapp-color);
+  color: #fff;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+}
+
+.btn-whatsapp-detail:hover {
+  background-color: var(--whatsapp-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+@media (max-width: 768px) {
+  .detail-modal {
+    padding: 24px;
+  }
+  
+  .detail-modal-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .detail-img-box {
+    height: 220px;
+  }
+}

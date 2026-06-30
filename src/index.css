@@ -1,0 +1,200 @@
+:root {
+  /* Colors */
+  --bg-primary: #07070a;
+  --bg-secondary: #0c0c10;
+  --bg-card: #12121a;
+  --bg-card-hover: #181824;
+  --color-primary: #E31C25;
+  --color-primary-hover: #ff2530;
+  --color-primary-glow: rgba(227, 28, 37, 0.2);
+  
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0b2;
+  --text-muted: #575768;
+  
+  --border-color: #161622;
+  --border-hover: #262638;
+  --whatsapp-color: #25D366;
+  --whatsapp-hover: #1ebd5b;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
+  
+  /* Layout */
+  --header-height: 80px;
+  --max-width: 1280px;
+  --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.8);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.95), 0 0 40px rgba(227, 28, 37, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(227, 28, 37, 0.04) 0px, transparent 45%),
+    radial-gradient(at 85% 15%, rgba(227, 28, 37, 0.03) 0px, transparent 45%),
+    radial-gradient(at 50% 50%, rgba(227, 28, 37, 0.01) 0px, transparent 60%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+button, select, input {
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+/* App container */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Section Common Styles */
+section {
+  padding: 100px 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-tag {
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: inline-block;
+  position: relative;
+}
+
+.section-tag::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 2px;
+  background-color: var(--color-primary);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  section {
+    padding: 60px 20px;
+  }
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #191925;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Glassmorphism modal base overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(4, 4, 6, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Carbon Fiber texture utility */
+.carbon-textured {
+  position: relative;
+}
+
+.carbon-textured::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.02;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(45deg, #fff 25%, transparent 25%), 
+    linear-gradient(-45deg, #fff 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #fff 75%), 
+    linear-gradient(-45deg, transparent 75%, #fff 75%);
+  background-size: 8px 8px;
+  background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+}
