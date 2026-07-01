@@ -16,8 +16,8 @@ export default function Services() {
     },
     {
       icon: <CreditCard size={32} className="service-icon" />,
-      title: "3 y 6 Cuotas Sin Interés",
-      description: "Pagá con tarjeta de crédito en 3 o 6 cuotas sin interés y aprovechá las mejores promociones bancarias."
+      title: "3 y 6 Cuotas",
+      description: "Pagá con tarjeta de crédito en 3 o 6 cuotas y aprovechá las mejores promociones bancarias."
     }
   ];
 
